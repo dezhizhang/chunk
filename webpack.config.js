@@ -1,7 +1,3 @@
-# chunk
-### preload-webpack-plugin
-
-```js
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const preloadWebpackPlugin = require("preload-webpack-plugin");
@@ -20,6 +16,3 @@ module.exports = {
     new preloadWebpackPlugin(),
   ],
 };
-```
-
-
