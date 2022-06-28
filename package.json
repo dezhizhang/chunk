@@ -5,6 +5,8 @@
   "main": "webpack.config.js",
   "dependencies": {
     "html-webpack-plugin": "^5.5.0",
+    "jquery": "^3.6.0",
+    "lodash": "^4.17.21",
     "preload-webpack-plugin": "^2.3.0"
   },
   "devDependencies": {
@@ -14,8 +16,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"build": "webpack",
-	"start":"webpack-dev-server"
+    "build": "webpack",
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",

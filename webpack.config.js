@@ -1,18 +1,36 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const preloadWebpackPlugin = require("preload-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
+  entry: {
+    page1: "./src/page1.js",
+    page2: "./src/page2.js",
+    page3: "./src/page3.js",
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+      minSize: 0,
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority:-10,
+        },
+        default: {
+          minChunks: 2,
+          priority:-20
+        },
+      },
+    },
+  },
   output: {
     path: path.resolve(__dirname, "build"),
-    filename: "build.js",
+    filename: "[name].js",
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
-    new preloadWebpackPlugin(),
   ],
 };
